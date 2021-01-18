@@ -1,27 +1,30 @@
 <%- include('./partials/header')%>
 <main class="detalis_product">
-<button onclick="toggleHide()">Edit User</button>
- <a href="/single/<%=picture.id%>/delete">Delete</a>
+<button id="btn" onclick="toggleHide()">Edit User</button>
+ <a id="delet" href="/single/<%=picture.id%>/delete">Delete</a>
    <figure>
    
         <img src=<%=picture.url%> alt="">
         </a>
-    <figcaption>
+    <figcaption class="figc">
+        <div> 
         <p>
             <%=picture.articlename%>
         </p>
         <p>
-            <%=picture.price%>
-        </p>
-        <p>
             <%=picture.company%>
+        </p>
+    </div>
+        <p id="price">
+            <%=picture.price%>
+
         </p>
     </figcaption>
 
 </figure>
 
 <form action="/single/<%=picture.id%>/edit" method="POST" id="Form" class="hide">
-    <h2>Edit Product</h2>
+    <h2 id="edit_product">Edit Product</h2>
     <input type="text" name="articlename"  placeholder="Product-Name" value="<%=picture.articlename%>">
     <input type="text" name="url"  placeholder="Url-Picture" value="<%=picture.url%>">
     <input type="text" name="brandname"  placeholder="Company" value="<%=picture.company%>">

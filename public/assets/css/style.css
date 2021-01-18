@@ -78,7 +78,7 @@ input:last-of-type:hover{
 
 
 
-.mainSections{
+.gallery{
     padding: 7.5vh 10% 5vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -88,14 +88,51 @@ input:last-of-type:hover{
 .grid:nth-of-type(7n+1){
     grid-column: 1/-1;
 }
-.article{
+.figc{
     display: flex;
     justify-content: space-between;
 }
-.mainSections img{
+.gallery img{
     width: 100%;
     opacity: .6;
 }
-.mainSections img:hover{
+.gallery img:hover{
     opacity: 1;
+}
+.detalis_product{
+    margin: 0 auto;
+    align-items: center;
+    padding-left:5%;
+
+}
+#price{
+    margin-left: 5%;
+}
+#btn{
+    text-align: center;
+    padding: 10px 30px;
+    width: 150px;
+    margin-left: 2.2%;
+    border: 1px solid #323A45;
+    color: #323A45;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#delet{
+   
+    text-align: center;
+    padding: 8px 30px;
+    width: 250px;
+    border: 1px solid #323A45;
+    color: #323A45;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#edit_product{
+    text-align: center;
+    font-family: Karla;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
 }

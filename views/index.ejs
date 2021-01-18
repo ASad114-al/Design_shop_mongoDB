@@ -1,13 +1,13 @@
 <%- include('./partials/header')%>
 
-<div class="mainSections">
+<div class="gallery">
     <% prudectData.forEach(picture => { %>
         
         <figure class="grid">
             <a href="/single/<%=picture.id%>">
                 <img src=<%=picture.url%> alt="">
                 </a>
-            <figcaption class="article"> 
+            <figcaption class="figc"> 
                 <div>
                 <p>
                     <%=picture.articlename%>
