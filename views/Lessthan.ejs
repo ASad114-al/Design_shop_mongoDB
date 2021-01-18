@@ -4,4 +4,29 @@
 <h1>LessThan 30$</h1>
 
 
+
+<div class="galler">
+    <% prudectData.forEach(picture => { %>
+        
+        <figure>
+            <a href="/single/<%=picture.id%>">
+                <img src=<%=picture.url%> alt="">
+                </a>
+            <figcaption>
+                <p>
+                    <%=picture.articlename%>
+                </p>
+                <p>
+                    <%=picture.price%>
+                </p>
+                <p>
+                    <%=picture.company%>
+                </p>
+            </figcaption>
+    
+        </figure>
+        <%})%>
+</div>
+
+
 <%- include('./partials/footer')%>

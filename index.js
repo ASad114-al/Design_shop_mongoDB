@@ -35,7 +35,14 @@ mongoose.connect(process.env.dburi, { useNewUrlParser: true, useUnifiedTopology:
 
 
 
-
+app.get('/Lessthan', (req, res) => {
+        
+    prudectItem.aggregate([{ $match: { Price: { $lte: 30 } } }])
+        .then((result) => {
+            res.render('Lessthan', {prudectData: result});
+        })
+        .catch((err) => console.log(err));
+});
 
 
 

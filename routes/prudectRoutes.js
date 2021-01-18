@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/add', (req, res) => {
-    prudectItem.find().limit(6)
+    prudectItem.aggregate([{ $sample: { size: 6 } }])
     .then(result => {
       
         res.render('add', {prudectData: result})
@@ -65,6 +65,7 @@ router.get('/single/:pictureId', (req, res) => {
         .then(result => res.redirect(`/single/${req.params.pictureId}`))
         .catch(err => console.log(err))
     })
+   
 
   
 
