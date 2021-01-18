@@ -1,3 +1,4 @@
 const toggleHide = () => {
-    document.getElementById('myForm').classList.toggle('hide')
+    console.log("test")
+    document.getElementById("Form").classList.toggle("hide")
 }

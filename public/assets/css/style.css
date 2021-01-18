@@ -1,3 +1,9 @@
+
+
+.hide{
+ /*    border: 1px solid red; */
+    display: none;
+}
 header{
     margin: 0 10%;    
 }
