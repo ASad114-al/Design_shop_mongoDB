@@ -59,6 +59,12 @@ router.get('/single/:pictureId', (req, res) => {
         .then(result => res.redirect('/'))
         .catch(err => console.log(err))
     })
+   router.post('/single/:pictureId/edit', (req, res) => {
+        console.log(req.body)
+        prudectItem.findByIdAndUpdate(req.params.pictureId, req.body)
+        .then(result => res.redirect(`/single/${req.params.pictureId}`))
+        .catch(err => console.log(err))
+    })
 
   
 

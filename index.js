@@ -8,7 +8,6 @@ app.use(express.urlencoded({ extended: true }))
 const mongoose = require('mongoose');
 const prudectItem = require('./models/galleryItem')
 const prudectRoutes=require('./routes/prudectRoutes')
-//  const addRouter=require('./routes/addRouter')
 mongoose.connect(process.env.dburi, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(result => {
         console.log('Connected to my DB')
@@ -19,7 +18,6 @@ mongoose.connect(process.env.dburi, { useNewUrlParser: true, useUnifiedTopology:
     app.use('/',prudectRoutes)
 
 
-//    app.use('/add-product',addRouter)
 
 
 
@@ -55,9 +53,4 @@ mongoose.connect(process.env.dburi, { useNewUrlParser: true, useUnifiedTopology:
 
 
 
-// app.post('/single/:pictureId/edit', (req, res) => {
-//     console.log(req.body)
-//     GalleryItem.findByIdAndUpdate(req.params.pictureId, req.body)
-//     .then(result => res.redirect(`/single/${req.params.pictureId}`))
-//     .catch(err => console.log(err))
-// })
+
