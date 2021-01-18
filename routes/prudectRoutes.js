@@ -26,13 +26,7 @@ router.get('/add', (req, res) => {
 
     })
 })
-router.get('/Lessthan', (req, res) => {
-    res.render('Lessthan')
-})
-router.get('/WeeklyRec', (req, res) => {
- 
-    res.render('WeeklyRec')
-})
+
 
 router.post('/add-product', (req, res) => {
     console.log(req.body);
@@ -65,7 +59,22 @@ router.get('/single/:pictureId', (req, res) => {
         .then(result => res.redirect(`/single/${req.params.pictureId}`))
         .catch(err => console.log(err))
     })
-   
+    router.get('/Lessthan', (req, res) => {
+        
+        prudectItem.aggregate([{ $match: { Price: { $lte: 30 } } }])
+            .then((result) => {
+                res.render('Lessthan', {prudectData: result});
+            })
+            .catch((err) => console.log(err));
+    });
+    
+    router.get('/WeeklyRec', (req, res) => {
+        prudectItem.aggregate([{ $sample: { size: 6 } }])
+            .then((result) => {
+                res.render('WeeklyRec', { prudectData: result });
+            })
+            .catch((err) => console.log(err));
+    });
 
   
 
